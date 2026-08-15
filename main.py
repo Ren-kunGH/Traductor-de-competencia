@@ -41,7 +41,7 @@ for palabra in seleccion_nivel:
         with sr.AudioFile("resultado.wav") as source:
             audio = recognizer.record(source)
             text = recognizer.recognize_google(audio, language = "EN-US")
-            auth_key = "35870bce-545f-4ac7-9aca-258b24149803:fx" # replace with your key
+            auth_key = "API" # replace with your key
             deepl_client = deepl.DeepLClient(auth_key)
             result = deepl_client.translate_text(text, target_lang="EN-US")
             print("Tu has dicho:", text)
@@ -72,7 +72,7 @@ with sr.AudioFile("resultado.wav") as source:
     audio_data = recognizer.record(source)
     try:
         text = recognizer.recognize_google(audio_data, language='EN-US')
-        auth_key = "35870bce-545f-4ac7-9aca-258b24149803:fx" # replace with your key
+        auth_key = "API" # replace with your key
         deepl_client = deepl.DeepLClient(auth_key)
         idioma_destino = input("Introduce el idioma de destino (por ejemplo, EN para inglés, FR para francés): ")
         result = deepl_client.translate_text(text, target_lang=idioma_destino)
